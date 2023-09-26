@@ -1,672 +1,795 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang=zh>
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>标签: tag1 | 八度易飞</title>
+  <meta property="og:type" content="website">
+<meta property="og:title" content="八度易飞">
+<meta property="og:url" content="http://baduyifei.com/tags/tag1/index.html">
+<meta property="og:site_name" content="八度易飞">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="baduyifei">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://baduyifei.com/tags/tag1/index.html">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="八度易飞" type="application/atom+xml">
+</head>
 
 
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <meta name="author" content="baduyifei">
-
-
-
-
-
-<title>标签: tag1 | 八度易飞</title>
-
-
-
-<link rel="icon" href="https://wenqidao.oss-cn-shanghai.aliyuncs.com/img/202309220259710.png">
-
-
-
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/nprogress/nprogress.css">
-
-
-
-<script src="/lib/jquery.min.js"></script>
-
-
-<script src="/lib/iconify-icon.min.js"></script>
-
-
-<script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-<script>
-  tailwind.config = {
-    darkMode: "class",
-  };
-</script>
-
-
-<script src="/lib/nprogress/nprogress.js"></script>
-
-<script>
-  $(document).ready(() => {
-    NProgress.configure({
-      showSpinner: false,
-    });
-    NProgress.start();
-    $("#nprogress .bar").css({
-      background: "#de7441",
-    });
-    $("#nprogress .peg").css({
-      "box-shadow": "0 0 2px #de7441, 0 0 4px #de7441",
-    });
-    $("#nprogress .spinner-icon").css({
-      "border-top-color": "#de7441",
-      "border-left-color": "#de7441",
-    });
-    setTimeout(function () {
-      NProgress.done();
-      $(".fade").removeClass("out");
-    }, 800);
-  });
-</script>
-
-<script>
-  (function () {
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const setting = localStorage.getItem("hexo-color-scheme") || "auto";
-    if (setting === "dark" || (prefersDark && setting !== "light"))
-      document.documentElement.classList.toggle("dark", true);
-    let isDark = document.documentElement.classList.contains("dark");
-  })();
-
-  $(document).ready(function () {
-    // init icon
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const isDark = document.documentElement.classList.contains("dark");
-    $("#theme-icon").attr("icon", isDark ? "ri:moon-line" : "ri:sun-line");
-
-    function toggleGiscusTheme() {
-      const isDark = document.documentElement.classList.contains("dark");
-      const giscusFrame = document.querySelector("iframe.giscus-frame");
-      if (giscusFrame) {
-        giscusFrame.contentWindow.postMessage(
-          {
-            giscus: {
-              setConfig: {
-                theme: isDark ? "dark" : "light",
-              },
-            },
-          },
-          "https://giscus.app"
-        );
-      }
-    }
-
-
-    // toggle dark mode
-    function toggleDark() {
-      let isDark = document.documentElement.classList.contains("dark");
-      const setting = localStorage.getItem("hexo-color-scheme") || "auto";
-      isDark = !isDark;
-      document.documentElement.classList.toggle("dark", isDark);
-      $("#theme-icon").attr("icon", isDark ? "ri:moon-line" : "ri:sun-line");
-      if (prefersDark === isDark) {
-        localStorage.setItem("hexo-color-scheme", "auto");
-      } else {
-        localStorage.setItem("hexo-color-scheme", isDark ? "dark" : "light");
-      }
-      toggleGiscusTheme();
-    }
-    $("#toggle-dark").click(toggleDark);
-
-    // listen dark mode change
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (e) => {
-        const setting = localStorage.getItem("hexo-color-scheme") || "auto";
-        if (setting === "auto") {
-          document.documentElement.classList.toggle("dark", e.matches);
-          $("#theme-icon").attr(
-            "icon",
-            e.matches ? "ri:moon-line" : "ri:sun-line"
-          );
-          toggleGiscusTheme();
-        }
-      });
-  });
-</script>
-
-
-
-
-<meta name="generator" content="Hexo 6.3.0"></head>
-<body class="font-sans bg-white dark:bg-zinc-900 text-gray-700 dark:text-gray-200 relative">
-  <header class="fixed w-full px-5 py-1 z-10 backdrop-blur-xl backdrop-saturate-150 border-b border-black/5">
-    <div class="max-auto">
-        <nav class="flex items-center text-base">
-            <a href="/" class="group">
-                <h2 class="font-medium tracking-tighterp text-l p-2">
-                    <img class="w-5 mr-2 inline-block transition-transform group-hover:rotate-[30deg]" id="logo" src="https://wenqidao.oss-cn-shanghai.aliyuncs.com/img/202309220259710.png" alt="八度易飞" />
-                    八度易飞
-                </h2>
-            </a>
-            <div id="header-title" class="opacity-0 md:ml-2 md:mt-[0.1rem] text-xs font-medium whitespace-nowrap overflow-hidden overflow-ellipsis">
-                
-            </div>
-            <div class="flex-1"></div>
-            <div class="flex items-center gap-3">
-                
-                    <a class="hidden sm:flex" href="https://baduyifei.com">
-                        主页
-                    </a>
-                    
-                    <a class="hidden sm:flex" href="/archives/">
-                        归档
-                    </a>
-                    
-                    <a class="hidden sm:flex" target="_blank" rel="noopener" href="https://about.baduyifei.com/">
-                        关于我
-                    </a>
-                    
-                        
-                                        <!-- <a class="w-5 h-5 hidden sm:flex" title="" href="rss2.xml">
-          <iconify-icon width="20" icon="ri:rss-line"></iconify-icon>
-        </a> -->
-                                        <a class="w-5 h-5" title="toggle theme" id="toggle-dark">
-                                            <iconify-icon width="20" icon="" id="theme-icon"></iconify-icon>
-                                        </a>
-            </div>
-            <div class="flex items-center justify-center gap-3 ml-3 sm:hidden">
-                <span class="w-5 h-5" aria-hidden="true" role="img" id="open-menu">
-          <iconify-icon width="20" icon="carbon:menu" ></iconify-icon>
-        </span>
-                <span class="w-5 h-5 hidden" aria-hidden="true" role="img" id="close-menu">
-          <iconify-icon  width="20" icon="carbon:close" ></iconify-icon>
-        </span>
-            </div>
-        </nav>
-    </div>
-</header>
-<div id="menu-panel" class="h-0 overflow-hidden sm:hidden fixed left-0 right-0 top-12 bottom-0 z-10">
-    <div id="menu-content" class="relative z-20 bg-white/80 px-6 sm:px-8 py-2 backdrop-blur-xl -translate-y-full transition-transform duration-300">
-        <ul class="nav flex flex-col sm:flex-row text-sm font-medium">
-            
-                <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
-                    <a href="https://baduyifei.com" class="flex h-12 sm:h-auto items-center">
-                        主页
-                    </a>
-                </li>
-                
-                <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
-                    <a href="/archives/" class="flex h-12 sm:h-auto items-center">
-                        归档
-                    </a>
-                </li>
-                
-                <li class="nav-portfolio sm:mx-2 border-b sm:border-0 border-black/5 last:border-0 hover:text-main">
-                    <a target="_blank" rel="noopener" href="https://about.baduyifei.com/" class="flex h-12 sm:h-auto items-center">
-                        关于我
-                    </a>
-                </li>
-                
-        </ul>
-    </div>
-    <div class="mask bg-black/20 absolute inset-0"></div>
-</div>
-  <main class="pt-14">
-    
-
-  <div>
-    <h2>Tag - tag1</h2>
-  </div>
-  <section class="px-6 max-w-prose mx-auto gap-12 grid grid-cols-1">
-  <div class="flex flex-col h-48 items-center justify-center">
-    <h1 class="site-title text-4xl leading-relaxed">
-      八度易飞
-    </h1>
-    <p class="text-gray-500 mt-2">
+<body class="main-center theme-black" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
       
-    </p>
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="https://twitter.com/baduyifei" target="_blank">
+          <img class="img-circle img-rotate" src="/images/avatar.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">八度易飞</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md"></h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> 我们注定要去做一些宿命之事。</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
   </div>
-  
-  
-    
-    
-      <div class="relative pointer-events-none">
-        <span class="text-9xl opacity-10 absolute -left-11 -top-6 font-bold">2023</span>
-      </div>
-    
-    <a style="--stagger:0" href="/p/20230914-difference-copy-softconnection-hardconnection/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          mac系统「复制、拷贝、替身、软连接、硬连接」区别详解
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          9月 14
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:1" href="/p/20230914-folder-synchronization-in-one-computer/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          如何实现同一台电脑当中的两个文件夹同步？
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          9月 14
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:2" href="/p/20230913-my-playlist/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          我的音乐列表
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          9月 13
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:3" href="/p/20230611-chrome-software-summary/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          Chrome浏览器宝藏插件和脚本汇总
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 11
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:4" href="/p/20230610-phone-software-summary/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          iPhone宝藏软件汇总
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 10
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:5" href="/p/20230610-mac-software-summary/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          MacOS系统电脑宝藏软件汇总
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 10
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:6" href="/p/20230609-mac-wechat-browser/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          Mac版微信如何设置使用默认浏览器打开网页链接
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 09
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:7" href="/p/20230608-night-watcher-swear/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          美剧《权力的游戏》守夜人誓词
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 08
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:8" href="/p/20230602-signingKeys-authenticationKeys/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          签名密钥(signing keys)和认证密钥(authentication keys)的主要区别
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 02
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:9" href="/p/20230601-nodejs-npm-nvm/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          node.js、npm、nvm的介绍安装与使用
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 01
-          ·
-          2 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:10" href="/p/20230601-shell-bash-zsh/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          shell中，bash 和 zsh的区别
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 01
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:11" href="/p/20230601-pipenv/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          包管理器 pipenv 的介绍与安装方法
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 01
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:12" href="/p/20230531-vim-deletehotkey/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          mac下vim 删除全部的方式
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          5月 31
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-      <div class="relative pointer-events-none">
-        <span class="text-9xl opacity-10 absolute -left-11 -top-6 font-bold">2020</span>
-      </div>
-    
-    <a style="--stagger:13" href="/p/20200709-morning-diary/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          一书一导图 | 读《晨间日记的奇迹》
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          7月 09
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:14" href="/p/20200618-laugh-out-loud/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          请在重复的日子里，努力笑出声
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          6月 18
-          ·
-          7 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:15" href="/p/20200104-sudo-permissions/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          在 macOS 系统中，每次操作都需要 sudo 命令来提高权限，怎么解决？
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          1月 04
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:16" href="/p/20200103-terminalShortcutkey/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          终端快捷键总结（mac 系统）
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          1月 03
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:17" href="/p/20200102-RootDirectory-UserHomeDirectory/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          mac 下，根目录/ 和 用户主目录~ 的区别是什么?
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          1月 02
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-    
-    
-    <a style="--stagger:18" href="/p/20200101-DirectoryStructure/" data-animate>
-      <header>
-        <h2 class="font-bold text-xl">
-          Linux/mac 系统的目录结构
-        </h2>
-      </header>
-      <section class="text-gray-400 my-2 text-sm time">
-        <p class="line-clamp-4">
-          
-        </p>
-        <p class="line-clamp-4">
-          1月 01
-          ·
-          1 min
-        </p>
-      </section>
-    </a>
-  
-</section>
-
-
-
-  </main>
-  <footer class="flex flex-col h-40 items-center justify-center text-gray-400 text-sm">
-    <!-- busuanzi -->
-    
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<!-- Busuanzi Analytics -->
-<div class="flex items-center gap-2">
-  <span>Visitors</span>
-  <span id="busuanzi_value_site_uv"></span>
-  <span>Page Views</span>
-  <span id="busuanzi_value_site_pv"></span>
 </div>
-<!-- End Busuanzi Analytics -->
 
 
-        <!-- copyright -->
-        <div class="flex items-center gap-2">
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-books">
+          <a href="/books">
+            
+            <i class="icon icon-book-fill"></i>
+            
+            <span class="menu-title">书单</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="http://weibo.com/baduyifei" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/baduyifei" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
 
-            <span>CC BY-NC-SA 4.0 © 2023</span>
-            <iconify-icon width="18" icon="emojione-monotone:maple-leaf"></iconify-icon>
-            <a href="https://baduyifei.com" target="_blank" rel="noopener noreferrer">baduyifei</a>
-        </div>
-        <!-- powered by -->
-        <div class="flex items-center gap-2">
-            <span>Nothing is impossible for a willing heart.</span>
-
-        </div>
-
-</footer>
-  <div class="back-to-top box-border fixed right-6 z-1024 -bottom-20 rounded py-1 px-1 bg-slate-900 opacity-60 text-white cursor-pointer text-center dark:bg-slate-600">
-    <span class="flex justify-center items-center text-sm">
-      <iconify-icon width="18" icon="ion:arrow-up-c" id="go-top"></iconify-icon>
-      <span id="scrollpercent"><span>0</span> %</span>
-    </span>
+    </nav>
   </div>
+</header>
+
   
-<script src="/js/main.js"></script>
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>当你停止创造，你的才能就不再重要，你所拥有的只剩下你的品味。而品味会裹挟你，让你排斥他人，变得狭隘。所以，要创造。</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/09/">九月 2023</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">六月 2023</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/05/">五月 2023</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/01/">一月 2020</a><span class="archive-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/blog/" style="font-size: 13px;">blog</a> <a href="/tags/cool/" style="font-size: 13px;">cool</a> <a href="/tags/tag1/" style="font-size: 14px;">tag1</a> <a href="/tags/tag2/" style="font-size: 14px;">tag2</a>
+    </div>
+  </div>
+
+    
+  </div>
+</aside>
+
+  
+  <main class="main" role="main">
+  <article class="content article article-tags post-type-list" itemscope="">
+    <header class="article-header">
+      <h1 itemprop="name" class="hidden-xs">标签: tag1</h1>
+      <p class="text-muted hidden-xs">共 19 篇文章</p>
+      <nav role="navigation" id="nav-main" class="okayNav">
+        <ul>
+          <li><a href="/tags">All</a></li>
+          
+          <li><a href="/tags/tag1/">tag1</a></li>
+          
+          <li><a href="/tags/tag2/">tag2</a></li>
+          
+          <li><a href="/tags/blog/">blog</a></li>
+          
+          <li><a href="/tags/cool/">cool</a></li>
+          
+        </ul>
+      </nav>
+    </header>
+    <!-- /header -->
+    <div class="article-body">
+      <div class="row">
+        
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-09-17T00:00:00.000Z" itemprop="datePublished">2023-09-17</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230913-my-playlist-abbrlink/">我的音乐列表</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-09-14T09:24:21.000Z" itemprop="datePublished">2023-09-14</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230914-folder-synchronization-in-one-computer/">如何实现同一台电脑当中的两个文件夹同步？</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-09-14T09:24:21.000Z" itemprop="datePublished">2023-09-14</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230914-difference-copy-softconnection-hardconnection/">mac系统「复制、拷贝、替身、软连接、硬连接」区别详解</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-11T09:07:21.000Z" itemprop="datePublished">2023-06-11</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230611-chrome-software-summary/">Chrome浏览器宝藏插件和脚本汇总</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-10T09:24:21.000Z" itemprop="datePublished">2023-06-10</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230610-phone-software-summary/">iPhone宝藏软件汇总</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-10T08:00:00.000Z" itemprop="datePublished">2023-06-10</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230610-mac-software-summary/">MacOS系统电脑宝藏软件汇总</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-09T00:07:21.000Z" itemprop="datePublished">2023-06-09</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230609-mac-wechat-browser/">Mac版微信如何设置使用默认浏览器打开网页链接</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-08T00:07:21.000Z" itemprop="datePublished">2023-06-08</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230608-night-watcher-swear/">美剧《权力的游戏》守夜人誓词</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-02T12:24:21.000Z" itemprop="datePublished">2023-06-02</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230602-signingKeys-authenticationKeys/">签名密钥(signing keys)和认证密钥(authentication keys)的主要区别</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-01T15:24:21.000Z" itemprop="datePublished">2023-06-01</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230601-nodejs-npm-nvm/">node.js、npm、nvm的介绍安装与使用</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-01T12:24:21.000Z" itemprop="datePublished">2023-06-01</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230601-shell-bash-zsh/">shell中，bash 和 zsh的区别</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-06-01T09:24:21.000Z" itemprop="datePublished">2023-06-01</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230601-pipenv/">包管理器 pipenv 的介绍与安装方法</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2023-05-31T09:24:21.000Z" itemprop="datePublished">2023-05-31</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20230531-vim-deletehotkey/">mac下vim 删除全部的方式</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2020-07-09T00:07:21.000Z" itemprop="datePublished">2020-07-09</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20200709-morning-diary/">一书一导图 | 读《晨间日记的奇迹》</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2020-06-18T00:07:21.000Z" itemprop="datePublished">2020-06-18</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20200618-laugh-out-loud/">请在重复的日子里，努力笑出声</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2020-01-04T12:24:21.000Z" itemprop="datePublished">2020-01-04</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20200104-sudo-permissions/">在 macOS 系统中，每次操作都需要 sudo 命令来提高权限，怎么解决？</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2020-01-03T12:24:21.000Z" itemprop="datePublished">2020-01-03</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20200103-terminalShortcutkey/">终端快捷键总结（mac 系统）</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2020-01-02T12:24:21.000Z" itemprop="datePublished">2020-01-02</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20200102-RootDirectory-UserHomeDirectory/">mac 下，根目录/ 和 用户主目录~ 的区别是什么?</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+<div class="col-md-6">
+    
+<article class="panel panel-default hover-shadow hover-grow" itemscope itemtype="http://schema.org/BlogPosting">
+  <div class="panel-body">
+     <div class="article-meta">
+       <time datetime="2020-01-01T12:24:21.000Z" itemprop="datePublished">2020-01-01</time>
+     </div>
+     <h3 class="article-title" itemprop="name">
+       <a class="article-link" href="/p/20200101-DirectoryStructure/">Linux/mac 系统的目录结构</a>
+     </h3>
+   </div>
+   
+   <div class="panel-footer">
+     
+      <a href="/tags/tag1/" class="label label-default mb">tag1</a>
+     
+      <a href="/tags/tag2/" class="label label-default mb">tag2</a>
+     
+     
+   </div>
+   
+</article>
+
+
+</div>
+
+      </div>
+    </div>
+  </article>
+   
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="http://weibo.com/baduyifei" target="_blank" title="Weibo" ><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="https://twitter.com/baduyifei" target="_blank" title="Twitter" ><i class="icon icon-twitter"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        &copy; 2023 baduyifei
+        
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
 
 
 
 
-  <div class="fixed top-0 bottom-0 left-0 right-0 pointer-events-none print:hidden" id="maple"></div>
+
+
+
+
+
+
+
+
 </body>
-
 </html>
